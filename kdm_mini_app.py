@@ -1376,7 +1376,6 @@ MINI_PUBLIC_ASSETS = {
     "/game_help.js": "application/javascript; charset=utf-8",
     "/game_fx.js": "application/javascript; charset=utf-8",
     "/haptics.js": "application/javascript; charset=utf-8",
-    "/mystery_box_banner.webp": "image/webp",
     "/leaderboard.js": "application/javascript; charset=utf-8",
     "/leaderboard.css": "text/css; charset=utf-8",
     "/rtp_badge.js": "application/javascript; charset=utf-8",
@@ -1887,16 +1886,10 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if pin_verified_until > time.time():
         context.user_data["admin_pin_verified_until"] = pin_verified_until
 
-    # Reply keyboard Web App button: the old chat menu is no longer shown.
-    web_button = KeyboardButton(
-        "Habtam Bet 🥳",
-        web_app=WebAppInfo(url=WEBAPP_URL),
-    )
-    markup = ReplyKeyboardMarkup(
-        [[web_button]],
-        resize_keyboard=True,
-        one_time_keyboard=False,
-        is_persistent=True,
+    # Inline Web App button: unlike a reply-keyboard Web App button, Telegram
+    # sends initData for this launch type, so the API can authenticate the user.
+    markup = InlineKeyboardMarkup(
+        [[InlineKeyboardButton("Habtam Bet 🥳", web_app=WebAppInfo(url=WEBAPP_URL))]]
     )
 
     balance = get_balance(user.id)
