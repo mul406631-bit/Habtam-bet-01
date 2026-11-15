@@ -1,9 +1,10 @@
 # Home ገጽ ላይ Deposit / Withdraw (ፈጣን ቦርሳ ካርድ)
 
-## የተቀየሩ ፋይሎች (3 + ይህ ማስታወሻ)
+## የተቀየሩ ፋይሎች (4 + ይህ ማስታወሻ)
 - `index.html` — 2 መስመር ብቻ ተጨመረ (home_wallet.css እና home_wallet.js)
 - `home_wallet.js` — አዲስ
 - `home_wallet.css` — አዲስ
+- `kdm_mini_app (1).py` — **አስፈላጊ**: ሰርቨሩ የሚያቀርበው በ`MINI_PUBLIC_ASSETS` ዝርዝር ውስጥ ያሉ ፋይሎችን ብቻ ነው። `/home_wallet.js` እና `/home_wallet.css` ወደ ዝርዝሩ ተጨመሩ (2 መስመር)። ያለዚህ አዲሶቹ ፋይሎች 404 ይሆኑና ካርዱ አይታይም። በሰርቨርዎ ላይ የፋይሉ ስም `kdm_mini_app.py` ከሆነ ተመሳሳዩን 2 መስመር እዚያ ይጨምሩ። ከዚያ ሰርቨሩን Restart ያድርጉ።
 
 ## ምን ይሰራል
 Home ላይ ከላይ ባነሩ ስር "ቦርሳዬ" ካርድ ይታያል፦
